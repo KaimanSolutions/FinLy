@@ -37,10 +37,12 @@ namespace finly
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
                 .AddMutationType<Mutation>()
+                .AddSubscriptionType<Subscription>()
                 .AddType<ProfileType>()
                 .AddType<ClientType>()
                 .AddFiltering()
-                .AddSorting();
+                .AddSorting()
+                .AddInMemorySubscriptions();
                 
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +52,9 @@ namespace finly
             {
                 app.UseDeveloperExceptionPage();
             }
+            
+            // Required for GraphQL Subscriptions
+            app.UseWebSockets();
 
             app.UseRouting();
 
