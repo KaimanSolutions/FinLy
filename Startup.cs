@@ -37,7 +37,10 @@ namespace finly
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
                 .AddType<ProfileType>()
-                .AddType<ClientType>();
+                .AddType<ClientType>()
+                .AddFiltering()
+                .AddSorting();
+                
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
