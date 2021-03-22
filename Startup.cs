@@ -36,6 +36,7 @@ namespace finly
             services
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
+                .AddMutationType<Mutation>()
                 .AddType<ProfileType>()
                 .AddType<ClientType>()
                 .AddFiltering()
