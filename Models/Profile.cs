@@ -5,7 +5,6 @@ using HotChocolate;
 
 namespace finly.Models
 {
-    [GraphQLDescription("Represents the file holding the clients and any of their applications, such as mortgages, loans and insurance policies")]
     public class Profile
     {
         [Key]
