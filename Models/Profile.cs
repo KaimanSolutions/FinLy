@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using HotChocolate;
 
 namespace finly.Models
 {
@@ -12,13 +11,15 @@ namespace finly.Models
 
         [Required]
         [StringLength(255)]
-        [GraphQLDescription("Reference number for overall profile, visible within the platform.")]
         public string DisplayName { get; set; }
         
         [Required]
-        [GraphQLDescription("Date the profile was created when added to the system.")]
         public DateTime CreateDate { get; set; }
 
         public ICollection<Client> Clients { get; set; } = new List<Client>();
+
+        public ICollection<CompanyClient> CompanyClients { get; set; } = new List<CompanyClient>();
+
+        public ICollection<Mortgage> Mortgages { get; set; } = new List<Mortgage>();
     }
 }

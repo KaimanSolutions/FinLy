@@ -15,8 +15,12 @@ namespace finly.GraphQL.Profiles
 
             // Removing Profile.CreateDate from schema as do not want this exposed via API
             descriptor
-                .Field(p => p.CreateDate).Ignore();
+                .Field(p => p.CreateDate).Ignore()
+                .Description("The date this profile was added to the system");
 
+            descriptor
+                .Field(p => p.DisplayName)
+                .Description("Reference number for overall profile, visible within the platform.");
 
             descriptor
                 .Field(p => p.Clients)

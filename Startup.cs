@@ -32,6 +32,7 @@ namespace finly
             services.AddPooledDbContextFactory<AppDbContext>(opt => opt.UseSqlServer
             (Configuration.GetConnectionString("FinlySQLConString")));
 
+
             // Setting up GraphQL Schema
             services
                 .AddGraphQLServer()
@@ -64,7 +65,7 @@ namespace finly
             });
 
             // Add Voyager UI for creating diagram of Schema but cannot get GraphQLVoyagerOptions to be found
-            /* app.UseGraphQLVoyager(new GraphQLVoyagerOptions()
+            /*  app.UseGraphQLVoyager(new GraphQLVoyagerOptions()
             {
                 GraphQLEndPoint = "/graphql",
                 Path = "/graphql-voyager"
